@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+LAYOUT DE ELEMENTO: item_tarea.xml
+Este archivo define cómo se ve CADA tarea individual en la lista.
+Usa Material Design con CardView para un aspecto moderno.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="8dp"
+    android:id="@+id/cardViewTarea">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <!-- ===== CHECKBOX (para marcar como completada) ===== -->
+        <CheckBox
+            android:id="@+id/checkBoxCompletada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:buttonTint="#3498db" />
+
+        <!-- ===== INFORMACIÓN DE LA TAREA ===== -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Título de la tarea -->
+            <TextView
+                android:id="@+id/textViewTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título de la tarea"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#2c3e50"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <!-- Descripción de la tarea -->
+            <TextView
+                android:id="@+id/textViewDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción de la tarea"
+                android:textSize="14sp"
+                android:textColor="#7f8c8d"
+                android:layout_marginTop="4dp"
+                android:maxLines="3"
+                android:ellipsize="end" />
+
+            <!-- Información adicional -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <!-- ID de la tarea -->
+                <TextView
+                    android:id="@+id/textViewId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID: 1"
+                    android:textSize="12sp"
+                    android:textColor="#95a5a6"
+                    android:background="#ecf0f1"
+                    android:padding="4dp"
+                    android:textStyle="bold" />
+
+                <!-- Estado visual -->
+                <TextView
+                    android:id="@+id/textViewEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⏳ Pendiente"
+                    android:textSize="12sp"
+                    android:textColor="#e67e22"
+                    android:layout_marginStart="8dp"
+                    android:padding="4dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ===== BOTÓN ELIMINAR ===== -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🗑️"
+            android:textSize="18sp"
+            app:backgroundTint="#e74c3c"
+            android:textColor="#ffffff"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
